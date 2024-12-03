@@ -12,7 +12,7 @@ export interface SettingsDocumentDataNavigationItem {
    * Link field in *Settings → Navigation*
    *
    * - **Field Type**: Link
-   * - **Placeholder**: This is a link
+   * - **Placeholder**: *None*
    * - **API ID Path**: settings.navigation[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
@@ -22,7 +22,7 @@ export interface SettingsDocumentDataNavigationItem {
    * Label field in *Settings → Navigation*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: This is the link label
+   * - **Placeholder**: *None*
    * - **API ID Path**: settings.navigation[].label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */

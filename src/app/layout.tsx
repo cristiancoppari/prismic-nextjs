@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito_Sans, Nunito } from "next/font/google";
+import { Header } from "@/app/components/layout/header";
+import { Footer } from "@/app/components/layout/footer";
 import { createClient } from "@/prismicio";
 import "@/app/globals.css";
 
@@ -19,8 +21,8 @@ const nunito = Nunito({
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-  const page = await client.getSingle("settings");
-  const { site_title: title, meta_description: description, og_image: ogImage } = page.data;
+  const settings = await client.getSingle("settings");
+  const { site_title: title, meta_description: description, og_image: ogImage } = settings.data;
 
   return {
     title: title || "Flowrise Title fallback",
@@ -39,9 +41,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunitoSans.variable} ${nunito.variable} antialiased`}>
       <body>
-        <header>Header</header>
+        <Header />
         {children}
-        <footer>Footer</footer>
+        <Footer />
       </body>
     </html>
   );

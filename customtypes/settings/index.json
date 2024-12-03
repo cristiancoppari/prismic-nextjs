@@ -38,7 +38,7 @@
               "type": "Link",
               "config": {
                 "label": "Link",
-                "placeholder": "This is a link",
+                "placeholder": "",
                 "allowTargetBlank": true,
                 "select": null,
                 "allowText": true
@@ -48,7 +48,7 @@
               "type": "Text",
               "config": {
                 "label": "Label",
-                "placeholder": "This is the link label"
+                "placeholder": ""
               }
             }
           }
