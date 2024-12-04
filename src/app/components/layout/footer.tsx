@@ -10,6 +10,9 @@ export async function Footer() {
   return (
     <footer>
       <Link href="/">Home</Link>
+      <p>
+        &copy; {new Date().getFullYear()} <a href="https://desarrolladorweb.com.ar">Desarrollador Web</a>
+      </p>
       <nav>
         <ul>
           {navigation.map(({ link, label }, i) => (
