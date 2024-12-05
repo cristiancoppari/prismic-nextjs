@@ -40,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${nunitoSans.variable} ${nunito.variable} antialiased`}>
-      <body>
+      <body className="font-body">
         <Header />
         {children}
         <Footer />
