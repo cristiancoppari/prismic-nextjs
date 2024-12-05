@@ -29,18 +29,39 @@ const components: JSXMapSerializer = {
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
-    <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-      <div className="grid grid-cols-1 place-items-center text-center">
-        <PrismicRichText field={slice.primary.heading} components={components} />
-        <PrismicRichText field={slice.primary.body} components={components} />
-        {slice.primary.button.map((item, i) => (
-          <Button key={i} field={item.link} className="mb-8 md:mb-10">
-            {item.label}
-          </Button>
-        ))}
-        <PrismicNextImage field={slice.primary.image} className="w-full max-w-4xl drop-shadow-xl" alt={""} />
-      </div>
-    </Bounded>
+    <>
+      {slice.variation === "horizontal" && (
+        <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+          <div className="grid grid-cols-1 place-items-center md:grid-cols-2">
+            <div className="grid h-fit grid-rows-[1fr,auto,auto]">
+              <PrismicRichText field={slice.primary.heading} components={components} />
+              <PrismicRichText field={slice.primary.body} components={components} />
+              {slice.primary.button.map((item, i) => (
+                <Button key={i} field={item.link} className="mb-8 md:mb-10">
+                  {item.label}
+                </Button>
+              ))}
+            </div>
+            <PrismicNextImage field={slice.primary.image} className="w-full max-w-4xl drop-shadow-xl" alt={""} />
+          </div>
+        </Bounded>
+      )}
+
+      {slice.variation === "default" && (
+        <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+          <div className="grid grid-cols-1 place-items-center text-center">
+            <PrismicRichText field={slice.primary.heading} components={components} />
+            <PrismicRichText field={slice.primary.body} components={components} />
+            {slice.primary.button.map((item, i) => (
+              <Button key={i} field={item.link} className="mb-8 md:mb-10">
+                {item.label}
+              </Button>
+            ))}
+            <PrismicNextImage field={slice.primary.image} className="w-full max-w-4xl drop-shadow-xl" alt={""} />
+          </div>
+        </Bounded>
+      )}
+    </>
   );
 };
 
