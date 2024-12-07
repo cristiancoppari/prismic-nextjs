@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import type { Metadata } from "next";
 import { Nunito_Sans, Nunito } from "next/font/google";
 import { Header } from "@/app/components/layout/header";
@@ -46,7 +48,9 @@ export default function RootLayout({
         {children}
         <Footer />
         <div className="fixed inset-0 z-[-1] bg-gradient-to-tr from-emerald-50 to-cyan-50 opacity-50" />
-        <PrismicPreview repositoryName={repositoryName} />
+
+        {/* commenting the PrismicPreview because of bug with cookies */}
+        {/* <PrismicPreview repositoryName={repositoryName} /> */}
       </body>
     </html>
   );
